@@ -1,0 +1,80 @@
+{
+    "apiVersion": "spdx.softwarecomposition.kubescape.io/v1beta1",
+    "kind": "VulnerabilityManifest",
+    "metadata": {
+        "annotations": {
+            "kubescape.io/image-id": "docker-pullable://gcr.io/google-samples/microservices-demo/frontend@sha256:048d9344b759afffd52f4585fb11ee5842f013857eec1136b60973f9ee2fc8f0",
+            "kubescape.io/instance-id": "apiVersion-apps/v1/namespace-default/kind-ReplicaSet/name-frontend-8475b5657d/containerName-server",
+            "kubescape.io/status": "",
+            "kubescape.io/wlid": "wlid://cluster-minikube/namespace-default/deployment-frontend",
+            "kubescape.io/workload-container-name": "server"
+        },
+        "creationTimestamp": "2023-10-11T08:39:28Z",
+        "labels": {
+            "kubescape.io/context": "filtered",
+            "kubescape.io/workload-api-group": "apps",
+            "kubescape.io/workload-api-version": "v1",
+            "kubescape.io/workload-container-name": "server",
+            "kubescape.io/workload-kind": "Deployment",
+            "kubescape.io/workload-name": "frontend",
+            "kubescape.io/workload-namespace": "default"
+        },
+        "name": "default-replicaset-frontend-8475b5657d-2d4b-6716",
+        "namespace": "kubescape",
+        "resourceVersion": "1",
+        "uid": "e984250d-df69-42b3-b84b-991fd2ae9340"
+    },
+    "spec": {
+        "metadata": {
+            "report": {
+                "createdAt": null
+            },
+            "tool": {
+                "databaseVersion": "sha256:16423ac3a1c3cd30cfe138851c91e7ba24290ec499065e861cb0a90ecb50a059",
+                "name": "",
+                "version": "v0.61.0"
+            },
+            "withRelevancy": true
+        },
+        "payload": {
+            "descriptor": {
+                "configuration": null,
+                "db": {
+                    "built": "2023-10-11T01:24:08Z",
+                    "checksum": "sha256:16423ac3a1c3cd30cfe138851c91e7ba24290ec499065e861cb0a90ecb50a059",
+                    "error": null,
+                    "location": "/home/nonroot/.cache/grype/db/5",
+                    "schemaVersion": 5
+                },
+                "name": "grype",
+                "version": "[not provided]"
+            },
+            "distro": {
+                "idLike": [
+                    "alpine"
+                ],
+                "name": "alpine",
+                "version": "3.18.0"
+            },
+            "matches": null,
+            "source": {
+                "target": {
+                    "architecture": "",
+                    "config": null,
+                    "imageID": "",
+                    "imageSize": 0,
+                    "layers": null,
+                    "manifest": null,
+                    "manifestDigest": "",
+                    "mediaType": "",
+                    "os": "",
+                    "repoDigests": [],
+                    "tags": [],
+                    "userInput": ""
+                },
+                "type": "image"
+            }
+        }
+    },
+    "status": {}
+}

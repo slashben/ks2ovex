@@ -1,0 +1,954 @@
+{
+    "apiVersion": "spdx.softwarecomposition.kubescape.io/v1beta1",
+    "kind": "VulnerabilityManifest",
+    "metadata": {
+        "annotations": {
+            "kubescape.io/image-id": "docker-pullable://gcr.io/google-samples/microservices-demo/adservice@sha256:45fb8ed886902c0c49e044b1f8870fad61c1022fa23c4943098302a8f1c5b75f",
+            "kubescape.io/instance-id": "apiVersion-apps/v1/namespace-default/kind-ReplicaSet/name-adservice-7d857689bd/containerName-server",
+            "kubescape.io/status": "",
+            "kubescape.io/wlid": "wlid://cluster-minikube/namespace-default/deployment-adservice",
+            "kubescape.io/workload-container-name": "server"
+        },
+        "creationTimestamp": "2023-10-11T09:17:19Z",
+        "labels": {
+            "kubescape.io/context": "filtered",
+            "kubescape.io/workload-api-group": "apps",
+            "kubescape.io/workload-api-version": "v1",
+            "kubescape.io/workload-container-name": "server",
+            "kubescape.io/workload-kind": "Deployment",
+            "kubescape.io/workload-name": "adservice",
+            "kubescape.io/workload-namespace": "default"
+        },
+        "name": "default-replicaset-adservice-7d857689bd-b630-5e48",
+        "namespace": "kubescape",
+        "resourceVersion": "1",
+        "uid": "7025bf4f-3deb-494d-b3c2-8d3c96362744"
+    },
+    "spec": {
+        "metadata": {
+            "report": {
+                "createdAt": null
+            },
+            "tool": {
+                "databaseVersion": "sha256:16423ac3a1c3cd30cfe138851c91e7ba24290ec499065e861cb0a90ecb50a059",
+                "name": "",
+                "version": "v0.61.0"
+            },
+            "withRelevancy": true
+        },
+        "payload": {
+            "descriptor": {
+                "configuration": null,
+                "db": {
+                    "built": "2023-10-11T01:24:08Z",
+                    "checksum": "sha256:16423ac3a1c3cd30cfe138851c91e7ba24290ec499065e861cb0a90ecb50a059",
+                    "error": null,
+                    "location": "/home/nonroot/.cache/grype/db/5",
+                    "schemaVersion": 5
+                },
+                "name": "grype",
+                "version": "[not provided]"
+            },
+            "distro": {
+                "idLike": [
+                    "alpine"
+                ],
+                "name": "alpine",
+                "version": "3.17.1"
+            },
+            "matches": [
+                {
+                    "artifact": {
+                        "cpes": [
+                            "cpe:2.3:a:google:guava:31.1-jre:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:guava:guava:31.1-jre:*:*:*:*:*:*:*"
+                        ],
+                        "language": "java",
+                        "licenses": [
+                            "LicenseRef-http---www.apache.org-licenses-LICENSE-2.0.txt"
+                        ],
+                        "locations": null,
+                        "metadata": {
+                            "archiveDigests": [
+                                {
+                                    "algorithm": "SHA1",
+                                    "value": "60458f877d055d0c9114d9e1a2efb737b4bc282c"
+                                }
+                            ],
+                            "manifestName": "",
+                            "pomArtifactID": "",
+                            "pomGroupID": "",
+                            "virtualPath": ""
+                        },
+                        "metadataType": "JavaMetadata",
+                        "name": "guava",
+                        "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+                        "type": "java-archive",
+                        "upstreams": null,
+                        "version": "31.1-jre"
+                    },
+                    "matchDetails": [
+                        {
+                            "found": {
+                                "cpes": [
+                                    "cpe:2.3:a:google:guava:*:*:*:*:*:*:*:*"
+                                ],
+                                "versionConstraint": "\u003c 32.0.0 (unknown)",
+                                "vulnerabilityID": "CVE-2020-8908"
+                            },
+                            "matcher": "java-matcher",
+                            "searchedBy": {
+                                "cpes": [
+                                    "cpe:2.3:a:google:guava:31.1-jre:*:*:*:*:*:*:*"
+                                ],
+                                "namespace": "nvd:cpe"
+                            },
+                            "type": "cpe-match"
+                        }
+                    ],
+                    "relatedVulnerabilities": null,
+                    "vulnerability": {
+                        "advisories": null,
+                        "cvss": [
+                            {
+                                "metrics": {
+                                    "baseScore": 2.1,
+                                    "exploitabilityScore": 3.9,
+                                    "impactScore": 2.9
+                                },
+                                "vector": "AV:L/AC:L/Au:N/C:P/I:N/A:N",
+                                "vendorMetadata": {},
+                                "version": "2.0"
+                            },
+                            {
+                                "metrics": {
+                                    "baseScore": 3.3,
+                                    "exploitabilityScore": 1.8,
+                                    "impactScore": 1.4
+                                },
+                                "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+                                "vendorMetadata": {},
+                                "version": "3.1"
+                            },
+                            {
+                                "metrics": {
+                                    "baseScore": 3.3,
+                                    "exploitabilityScore": 1.8,
+                                    "impactScore": 1.4
+                                },
+                                "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+                                "vendorMetadata": {},
+                                "version": "3.1"
+                            }
+                        ],
+                        "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2020-8908",
+                        "description": "A temp directory creation vulnerability exists in all versions of Guava, allowing an attacker with access to the machine to potentially access data in a temporary directory created by the Guava API com.google.common.io.Files.createTempDir(). By default, on unix-like systems, the created directory is world-readable (readable by an attacker with access to the system). The method in question has been marked @Deprecated in versions 30.0 and later and should not be used. For Android developers, we recommend choosing a temporary directory API provided by Android, such as context.getCacheDir(). For other Java developers, we recommend migrating to the Java 7 API java.nio.file.Files.createTempDirectory() which explicitly configures permissions of 700, or configuring the Java runtime's java.io.tmpdir system property to point to a location whose permissions are appropriately configured.\n\n",
+                        "fix": {
+                            "state": "unknown",
+                            "versions": []
+                        },
+                        "id": "CVE-2020-8908",
+                        "namespace": "nvd:cpe",
+                        "severity": "Low",
+                        "urls": [
+                            "https://github.com/google/guava/commit/fec0dbc4634006a6162cfd4d0d09c962073ddf40",
+                            "https://github.com/google/guava/issues/4011",
+                            "https://lists.apache.org/thread.html/r007add131977f4f576c232b25e024249a3d16f66aad14a4b52819d21%40%3Ccommon-issues.hadoop.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r07ed3e4417ad043a27bee7bb33322e9bfc7d7e6d1719b8e3dfd95c14%40%3Cdev.drill.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r161b87f8037bbaff400194a63cd2016c9a69f5949f06dcc79beeab54%40%3Cdev.drill.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r215b3d50f56faeb2f9383505f3e62faa9f549bb23e8a9848b78a968e%40%3Ccommits.ws.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r294be9d31c0312d2c0837087204b5d4bf49d0552890e6eec716fa6a6%40%3Cyarn-issues.hadoop.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r2fe45d96eea8434b91592ca08109118f6308d60f6d0e21d52438cfb4%40%3Cdev.drill.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r3c3b33ee5bef0c67391d27a97cbfd89d44f328cf072b601b58d4e748%40%3Ccommits.pulsar.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r3dd8881de891598d622227e9840dd7c2ef1d08abbb49e9690c7ae1bc%40%3Cissues.geode.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r4776f62dfae4a0006658542f43034a7fc199350e35a66d4e18164ee6%40%3Ccommits.cxf.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r49549a8322f62cd3acfa4490d25bfba0be04f3f9ff4d14fe36199d27%40%3Cyarn-dev.hadoop.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r58a8775205ab1839dba43054b09a9ab3b25b423a4170b2413c4067ac%40%3Ccommon-issues.hadoop.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r5b3d93dfdfb7708e796e8762ab40edbde8ff8add48aba53e5ea26f44%40%3Cissues.geode.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r5d61b98ceb7bba939a651de5900dbd67be3817db6bfcc41c6e04e199%40%3Cyarn-issues.hadoop.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r6874dfe26eefc41b7c9a5e4a0487846fc4accf8c78ff948b24a1104a%40%3Cdev.drill.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r68d86f4b06c808204f62bcb254fcb5b0432528ee8d37a07ef4bc8222%40%3Ccommits.ws.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r79e47ed555bdb1180e528420a7a2bb898541367a29a3bc6bbf0baf2c%40%3Cissues.hive.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r7b0e81d8367264d6cad98766a469d64d11248eb654417809bfdacf09%40%3Cyarn-issues.hadoop.apache.org%3E",
+                            "https://lists.apache.org/thread.html/r841c5e14e1b55281523ebcde661ece00b38a0569e00ef5e12bd5f6ba%40%3Cissues.maven.apache.org%3E",
+                            "https://lists.apache.org/thread.html/ra7ab308481ee729f998691e8e3e02e93b1dedfc98f6b1cd3d86923b3%40%3Cyarn-issues.hadoop.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rb2364f4cf4d274eab5a7ecfaf64bf575cedf8b0173551997c749d322%40%3Cgitbox.hive.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rb8c0f1b7589864396690fe42a91a71dea9412e86eec66dc85bbacaaf%40%3Ccommits.cxf.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rbc7642b9800249553f13457e46b813bea1aec99d2bc9106510e00ff3%40%3Ctorque-dev.db.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rc2dbc4633a6eea1fcbce6831876cfa17b73759a98c65326d1896cb1a%40%3Ctorque-dev.db.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rc607bc52f3507b8b9c28c6a747c3122f51ac24afe80af2a670785b97%40%3Cissues.geode.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rcafc3a637d82bdc9a24036b2ddcad1e519dd0e6f848fcc3d606fd78f%40%3Cdev.hive.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rd01f5ff0164c468ec7abc96ff7646cea3cce6378da2e4aa29c6bcb95%40%3Cgithub.arrow.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rd2704306ec729ccac726e50339b8a8f079515cc29ccb77713b16e7c5%40%3Cissues.hive.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rd5d58088812cf8e677d99b07f73c654014c524c94e7fedbdee047604%40%3Ctorque-dev.db.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rd7e12d56d49d73e2b8549694974b07561b79b05455f7f781954231bf%40%3Cdev.pig.apache.org%3E",
+                            "https://lists.apache.org/thread.html/re120f6b3d2f8222121080342c5801fdafca2f5188ceeb3b49c8a1d27%40%3Cyarn-issues.hadoop.apache.org%3E",
+                            "https://lists.apache.org/thread.html/reebbd63c25bc1a946caa419cec2be78079f8449d1af48e52d47c9e85%40%3Cissues.geode.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rf00b688ffa620c990597f829ff85fdbba8bf73ee7bfb34783e1f0d4e%40%3Cyarn-dev.hadoop.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rf9f0fa84b8ae1a285f0210bafec6de2a9eba083007d04640b82aa625%40%3Cissues.geode.apache.org%3E",
+                            "https://lists.apache.org/thread.html/rfc27e2727a20a574f39273e0432aa97486a332f9b3068f6ac1346594%40%3Cdev.myfaces.apache.org%3E",
+                            "https://security.netapp.com/advisory/ntap-20220210-0003/",
+                            "https://snyk.io/vuln/SNYK-JAVA-COMGOOGLEGUAVA-1015415",
+                            "https://www.oracle.com//security-alerts/cpujul2021.html",
+                            "https://www.oracle.com/security-alerts/cpuApr2021.html",
+                            "https://www.oracle.com/security-alerts/cpuapr2022.html",
+                            "https://www.oracle.com/security-alerts/cpujan2022.html",
+                            "https://www.oracle.com/security-alerts/cpuoct2021.html"
+                        ]
+                    }
+                },
+                {
+                    "artifact": {
+                        "cpes": [
+                            "cpe:2.3:a:google:guava:31.1-jre:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:guava:guava:31.1-jre:*:*:*:*:*:*:*"
+                        ],
+                        "language": "java",
+                        "licenses": [
+                            "LicenseRef-http---www.apache.org-licenses-LICENSE-2.0.txt"
+                        ],
+                        "locations": null,
+                        "metadata": {
+                            "archiveDigests": [
+                                {
+                                    "algorithm": "SHA1",
+                                    "value": "60458f877d055d0c9114d9e1a2efb737b4bc282c"
+                                }
+                            ],
+                            "manifestName": "",
+                            "pomArtifactID": "",
+                            "pomGroupID": "",
+                            "virtualPath": ""
+                        },
+                        "metadataType": "JavaMetadata",
+                        "name": "guava",
+                        "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+                        "type": "java-archive",
+                        "upstreams": null,
+                        "version": "31.1-jre"
+                    },
+                    "matchDetails": [
+                        {
+                            "found": {
+                                "cpes": [
+                                    "cpe:2.3:a:google:guava:*:*:*:*:*:*:*:*"
+                                ],
+                                "versionConstraint": "\u003c 32.0.0 (unknown)",
+                                "vulnerabilityID": "CVE-2023-2976"
+                            },
+                            "matcher": "java-matcher",
+                            "searchedBy": {
+                                "cpes": [
+                                    "cpe:2.3:a:google:guava:31.1-jre:*:*:*:*:*:*:*"
+                                ],
+                                "namespace": "nvd:cpe"
+                            },
+                            "type": "cpe-match"
+                        }
+                    ],
+                    "relatedVulnerabilities": null,
+                    "vulnerability": {
+                        "advisories": null,
+                        "cvss": [
+                            {
+                                "metrics": {
+                                    "baseScore": 7.1,
+                                    "exploitabilityScore": 1.8,
+                                    "impactScore": 5.2
+                                },
+                                "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+                                "vendorMetadata": {},
+                                "version": "3.1"
+                            },
+                            {
+                                "metrics": {
+                                    "baseScore": 5.5,
+                                    "exploitabilityScore": 1.8,
+                                    "impactScore": 3.6
+                                },
+                                "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+                                "vendorMetadata": {},
+                                "version": "3.1"
+                            }
+                        ],
+                        "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-2976",
+                        "description": "Use of Java's default temporary directory for file creation in `FileBackedOutputStream` in Google Guava versions 1.0 to 31.1 on Unix systems and Android Ice Cream Sandwich allows other users and apps on the machine with access to the default Java temporary directory to be able to access the files created by the class.\n\nEven though the security vulnerability is fixed in version 32.0.0, we recommend using version 32.0.1 as version 32.0.0 breaks some functionality under Windows.\n\n",
+                        "fix": {
+                            "state": "unknown",
+                            "versions": []
+                        },
+                        "id": "CVE-2023-2976",
+                        "namespace": "nvd:cpe",
+                        "severity": "High",
+                        "urls": [
+                            "https://github.com/google/guava/issues/2575",
+                            "https://security.netapp.com/advisory/ntap-20230818-0008/"
+                        ]
+                    }
+                },
+                {
+                    "artifact": {
+                        "cpes": [
+                            "cpe:2.3:a:jackson-databind:jackson-databind:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:jackson-databind:jackson_databind:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:jackson_databind:jackson-databind:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:jackson_databind:jackson_databind:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:fasterxml:jackson-databind:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:fasterxml:jackson_databind:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:jackson-databind:jackson:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:jackson:jackson-databind:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:jackson:jackson_databind:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:jackson_databind:jackson:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:core:jackson-databind:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:core:jackson_databind:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:fasterxml:jackson:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:jackson:jackson:2.15.1:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:core:jackson:2.15.1:*:*:*:*:*:*:*"
+                        ],
+                        "language": "java",
+                        "licenses": [
+                            "LicenseRef-https---www.apache.org-licenses-LICENSE-2.0.txt"
+                        ],
+                        "locations": null,
+                        "metadata": {
+                            "archiveDigests": [
+                                {
+                                    "algorithm": "SHA1",
+                                    "value": "ac9ba74d208faf356e4719a49e59c6ea9237c01d"
+                                }
+                            ],
+                            "manifestName": "",
+                            "pomArtifactID": "",
+                            "pomGroupID": "",
+                            "virtualPath": ""
+                        },
+                        "metadataType": "JavaMetadata",
+                        "name": "jackson-databind",
+                        "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.15.1",
+                        "type": "java-archive",
+                        "upstreams": null,
+                        "version": "2.15.1"
+                    },
+                    "matchDetails": [
+                        {
+                            "found": {
+                                "cpes": [
+                                    "cpe:2.3:a:fasterxml:jackson-databind:*:*:*:*:*:*:*:*"
+                                ],
+                                "versionConstraint": "\u003c= 2.15.2 (unknown)",
+                                "vulnerabilityID": "CVE-2023-35116"
+                            },
+                            "matcher": "java-matcher",
+                            "searchedBy": {
+                                "cpes": [
+                                    "cpe:2.3:a:fasterxml:jackson-databind:2.15.1:*:*:*:*:*:*:*"
+                                ],
+                                "namespace": "nvd:cpe"
+                            },
+                            "type": "cpe-match"
+                        }
+                    ],
+                    "relatedVulnerabilities": null,
+                    "vulnerability": {
+                        "advisories": null,
+                        "cvss": [
+                            {
+                                "metrics": {
+                                    "baseScore": 4.7,
+                                    "exploitabilityScore": 1,
+                                    "impactScore": 3.6
+                                },
+                                "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+                                "vendorMetadata": {},
+                                "version": "3.1"
+                            }
+                        ],
+                        "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-35116",
+                        "description": "** DISPUTED ** jackson-databind through 2.15.2 allows attackers to cause a denial of service or other unspecified impact via a crafted object that uses cyclic dependencies. NOTE: the vendor's perspective is that this is not a valid vulnerability report, because the steps of constructing a cyclic data structure and trying to serialize it cannot be achieved by an external attacker.",
+                        "fix": {
+                            "state": "unknown",
+                            "versions": []
+                        },
+                        "id": "CVE-2023-35116",
+                        "namespace": "nvd:cpe",
+                        "severity": "Medium",
+                        "urls": [
+                            "https://github.com/FasterXML/jackson-databind/issues/3972"
+                        ]
+                    }
+                },
+                {
+                    "artifact": {
+                        "cpes": [
+                            "cpe:2.3:a:netty-handler:netty-handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-handler:netty_handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-project:netty-handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-project:netty_handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_handler:netty-handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_handler:netty_handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_project:netty-handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_project:netty_handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:handler:netty-handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:handler:netty_handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-handler:handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-project:handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_handler:handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_project:handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty:netty-handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty:netty_handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:handler:handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty:handler:4.1.87.Final:*:*:*:*:*:*:*"
+                        ],
+                        "language": "java",
+                        "licenses": [
+                            "LicenseRef-https---www.apache.org-licenses-LICENSE-2.0"
+                        ],
+                        "locations": null,
+                        "metadata": {
+                            "archiveDigests": [
+                                {
+                                    "algorithm": "SHA1",
+                                    "value": "2bd97491c22ebea4670c00f1bd5dbf65a8a1cfe7"
+                                }
+                            ],
+                            "manifestName": "",
+                            "pomArtifactID": "",
+                            "pomGroupID": "",
+                            "virtualPath": ""
+                        },
+                        "metadataType": "JavaMetadata",
+                        "name": "netty-handler",
+                        "purl": "pkg:maven/io.netty/netty-handler@4.1.87.Final",
+                        "type": "java-archive",
+                        "upstreams": null,
+                        "version": "4.1.87.Final"
+                    },
+                    "matchDetails": [
+                        {
+                            "found": {
+                                "versionConstraint": "\u003e=4.1.0.Final,\u003c=4.1.99.Final (unknown)",
+                                "vulnerabilityID": "GHSA-57m8-f3v5-hm5m"
+                            },
+                            "matcher": "java-matcher",
+                            "searchedBy": {
+                                "language": "java",
+                                "namespace": "github:language:java"
+                            },
+                            "type": "exact-direct-match"
+                        }
+                    ],
+                    "relatedVulnerabilities": [
+                        {
+                            "cvss": null,
+                            "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-4586",
+                            "description": "A vulnerability was found in the Hot Rod client. This security issue occurs as the Hot Rod client does not enable hostname validation when using TLS, possibly resulting in a man-in-the-middle (MITM) attack.",
+                            "id": "CVE-2023-4586",
+                            "namespace": "nvd:cpe",
+                            "severity": "High",
+                            "urls": [
+                                "https://access.redhat.com/security/cve/CVE-2023-4586",
+                                "https://bugzilla.redhat.com/show_bug.cgi?id=2235564",
+                                "https://security.snyk.io/vuln/SNYK-JAVA-IONETTY-1042268"
+                            ]
+                        }
+                    ],
+                    "vulnerability": {
+                        "advisories": null,
+                        "cvss": [
+                            {
+                                "metrics": {
+                                    "baseScore": 5.3,
+                                    "exploitabilityScore": 3.9,
+                                    "impactScore": 1.4
+                                },
+                                "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+                                "vendorMetadata": {
+                                    "base_severity": "Medium",
+                                    "status": "N/A"
+                                },
+                                "version": "3.1"
+                            }
+                        ],
+                        "dataSource": "https://github.com/advisories/GHSA-57m8-f3v5-hm5m",
+                        "description": "Netty-handler does not validate host names by default",
+                        "fix": {
+                            "state": "not-fixed",
+                            "versions": []
+                        },
+                        "id": "GHSA-57m8-f3v5-hm5m",
+                        "namespace": "github:language:java",
+                        "severity": "Medium",
+                        "urls": [
+                            "https://github.com/advisories/GHSA-57m8-f3v5-hm5m"
+                        ]
+                    }
+                },
+                {
+                    "artifact": {
+                        "cpes": [
+                            "cpe:2.3:a:google:guava:31.1-jre:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:guava:guava:31.1-jre:*:*:*:*:*:*:*"
+                        ],
+                        "language": "java",
+                        "licenses": [
+                            "LicenseRef-http---www.apache.org-licenses-LICENSE-2.0.txt"
+                        ],
+                        "locations": null,
+                        "metadata": {
+                            "archiveDigests": [
+                                {
+                                    "algorithm": "SHA1",
+                                    "value": "60458f877d055d0c9114d9e1a2efb737b4bc282c"
+                                }
+                            ],
+                            "manifestName": "",
+                            "pomArtifactID": "",
+                            "pomGroupID": "",
+                            "virtualPath": ""
+                        },
+                        "metadataType": "JavaMetadata",
+                        "name": "guava",
+                        "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+                        "type": "java-archive",
+                        "upstreams": null,
+                        "version": "31.1-jre"
+                    },
+                    "matchDetails": [
+                        {
+                            "found": {
+                                "versionConstraint": "\u003c32.0.0 (unknown)",
+                                "vulnerabilityID": "GHSA-5mg8-w23w-74h3"
+                            },
+                            "matcher": "java-matcher",
+                            "searchedBy": {
+                                "language": "java",
+                                "namespace": "github:language:java"
+                            },
+                            "type": "exact-direct-match"
+                        }
+                    ],
+                    "relatedVulnerabilities": [
+                        {
+                            "cvss": null,
+                            "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2020-8908",
+                            "description": "A temp directory creation vulnerability exists in all versions of Guava, allowing an attacker with access to the machine to potentially access data in a temporary directory created by the Guava API com.google.common.io.Files.createTempDir(). By default, on unix-like systems, the created directory is world-readable (readable by an attacker with access to the system). The method in question has been marked @Deprecated in versions 30.0 and later and should not be used. For Android developers, we recommend choosing a temporary directory API provided by Android, such as context.getCacheDir(). For other Java developers, we recommend migrating to the Java 7 API java.nio.file.Files.createTempDirectory() which explicitly configures permissions of 700, or configuring the Java runtime's java.io.tmpdir system property to point to a location whose permissions are appropriately configured.\n\n",
+                            "id": "CVE-2020-8908",
+                            "namespace": "nvd:cpe",
+                            "severity": "Low",
+                            "urls": [
+                                "https://github.com/google/guava/commit/fec0dbc4634006a6162cfd4d0d09c962073ddf40",
+                                "https://github.com/google/guava/issues/4011",
+                                "https://lists.apache.org/thread.html/r007add131977f4f576c232b25e024249a3d16f66aad14a4b52819d21%40%3Ccommon-issues.hadoop.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r07ed3e4417ad043a27bee7bb33322e9bfc7d7e6d1719b8e3dfd95c14%40%3Cdev.drill.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r161b87f8037bbaff400194a63cd2016c9a69f5949f06dcc79beeab54%40%3Cdev.drill.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r215b3d50f56faeb2f9383505f3e62faa9f549bb23e8a9848b78a968e%40%3Ccommits.ws.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r294be9d31c0312d2c0837087204b5d4bf49d0552890e6eec716fa6a6%40%3Cyarn-issues.hadoop.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r2fe45d96eea8434b91592ca08109118f6308d60f6d0e21d52438cfb4%40%3Cdev.drill.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r3c3b33ee5bef0c67391d27a97cbfd89d44f328cf072b601b58d4e748%40%3Ccommits.pulsar.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r3dd8881de891598d622227e9840dd7c2ef1d08abbb49e9690c7ae1bc%40%3Cissues.geode.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r4776f62dfae4a0006658542f43034a7fc199350e35a66d4e18164ee6%40%3Ccommits.cxf.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r49549a8322f62cd3acfa4490d25bfba0be04f3f9ff4d14fe36199d27%40%3Cyarn-dev.hadoop.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r58a8775205ab1839dba43054b09a9ab3b25b423a4170b2413c4067ac%40%3Ccommon-issues.hadoop.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r5b3d93dfdfb7708e796e8762ab40edbde8ff8add48aba53e5ea26f44%40%3Cissues.geode.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r5d61b98ceb7bba939a651de5900dbd67be3817db6bfcc41c6e04e199%40%3Cyarn-issues.hadoop.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r6874dfe26eefc41b7c9a5e4a0487846fc4accf8c78ff948b24a1104a%40%3Cdev.drill.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r68d86f4b06c808204f62bcb254fcb5b0432528ee8d37a07ef4bc8222%40%3Ccommits.ws.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r79e47ed555bdb1180e528420a7a2bb898541367a29a3bc6bbf0baf2c%40%3Cissues.hive.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r7b0e81d8367264d6cad98766a469d64d11248eb654417809bfdacf09%40%3Cyarn-issues.hadoop.apache.org%3E",
+                                "https://lists.apache.org/thread.html/r841c5e14e1b55281523ebcde661ece00b38a0569e00ef5e12bd5f6ba%40%3Cissues.maven.apache.org%3E",
+                                "https://lists.apache.org/thread.html/ra7ab308481ee729f998691e8e3e02e93b1dedfc98f6b1cd3d86923b3%40%3Cyarn-issues.hadoop.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rb2364f4cf4d274eab5a7ecfaf64bf575cedf8b0173551997c749d322%40%3Cgitbox.hive.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rb8c0f1b7589864396690fe42a91a71dea9412e86eec66dc85bbacaaf%40%3Ccommits.cxf.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rbc7642b9800249553f13457e46b813bea1aec99d2bc9106510e00ff3%40%3Ctorque-dev.db.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rc2dbc4633a6eea1fcbce6831876cfa17b73759a98c65326d1896cb1a%40%3Ctorque-dev.db.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rc607bc52f3507b8b9c28c6a747c3122f51ac24afe80af2a670785b97%40%3Cissues.geode.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rcafc3a637d82bdc9a24036b2ddcad1e519dd0e6f848fcc3d606fd78f%40%3Cdev.hive.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rd01f5ff0164c468ec7abc96ff7646cea3cce6378da2e4aa29c6bcb95%40%3Cgithub.arrow.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rd2704306ec729ccac726e50339b8a8f079515cc29ccb77713b16e7c5%40%3Cissues.hive.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rd5d58088812cf8e677d99b07f73c654014c524c94e7fedbdee047604%40%3Ctorque-dev.db.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rd7e12d56d49d73e2b8549694974b07561b79b05455f7f781954231bf%40%3Cdev.pig.apache.org%3E",
+                                "https://lists.apache.org/thread.html/re120f6b3d2f8222121080342c5801fdafca2f5188ceeb3b49c8a1d27%40%3Cyarn-issues.hadoop.apache.org%3E",
+                                "https://lists.apache.org/thread.html/reebbd63c25bc1a946caa419cec2be78079f8449d1af48e52d47c9e85%40%3Cissues.geode.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rf00b688ffa620c990597f829ff85fdbba8bf73ee7bfb34783e1f0d4e%40%3Cyarn-dev.hadoop.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rf9f0fa84b8ae1a285f0210bafec6de2a9eba083007d04640b82aa625%40%3Cissues.geode.apache.org%3E",
+                                "https://lists.apache.org/thread.html/rfc27e2727a20a574f39273e0432aa97486a332f9b3068f6ac1346594%40%3Cdev.myfaces.apache.org%3E",
+                                "https://security.netapp.com/advisory/ntap-20220210-0003/",
+                                "https://snyk.io/vuln/SNYK-JAVA-COMGOOGLEGUAVA-1015415",
+                                "https://www.oracle.com//security-alerts/cpujul2021.html",
+                                "https://www.oracle.com/security-alerts/cpuApr2021.html",
+                                "https://www.oracle.com/security-alerts/cpuapr2022.html",
+                                "https://www.oracle.com/security-alerts/cpujan2022.html",
+                                "https://www.oracle.com/security-alerts/cpuoct2021.html"
+                            ]
+                        }
+                    ],
+                    "vulnerability": {
+                        "advisories": null,
+                        "cvss": [
+                            {
+                                "metrics": {
+                                    "baseScore": 3.3,
+                                    "exploitabilityScore": 1.8,
+                                    "impactScore": 1.4
+                                },
+                                "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+                                "vendorMetadata": {
+                                    "base_severity": "Low",
+                                    "status": "N/A"
+                                },
+                                "version": "3.1"
+                            }
+                        ],
+                        "dataSource": "https://github.com/advisories/GHSA-5mg8-w23w-74h3",
+                        "description": "Information Disclosure in Guava",
+                        "fix": {
+                            "state": "fixed",
+                            "versions": [
+                                "32.0.0"
+                            ]
+                        },
+                        "id": "GHSA-5mg8-w23w-74h3",
+                        "namespace": "github:language:java",
+                        "severity": "Low",
+                        "urls": [
+                            "https://github.com/advisories/GHSA-5mg8-w23w-74h3"
+                        ]
+                    }
+                },
+                {
+                    "artifact": {
+                        "cpes": [
+                            "cpe:2.3:a:netty-handler:netty-handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-handler:netty_handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-project:netty-handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-project:netty_handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_handler:netty-handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_handler:netty_handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_project:netty-handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_project:netty_handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:handler:netty-handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:handler:netty_handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-handler:handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-project:handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_handler:handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_project:handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty:netty-handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty:netty_handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:handler:handler:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty:handler:4.1.87.Final:*:*:*:*:*:*:*"
+                        ],
+                        "language": "java",
+                        "licenses": [
+                            "LicenseRef-https---www.apache.org-licenses-LICENSE-2.0"
+                        ],
+                        "locations": null,
+                        "metadata": {
+                            "archiveDigests": [
+                                {
+                                    "algorithm": "SHA1",
+                                    "value": "2bd97491c22ebea4670c00f1bd5dbf65a8a1cfe7"
+                                }
+                            ],
+                            "manifestName": "",
+                            "pomArtifactID": "",
+                            "pomGroupID": "",
+                            "virtualPath": ""
+                        },
+                        "metadataType": "JavaMetadata",
+                        "name": "netty-handler",
+                        "purl": "pkg:maven/io.netty/netty-handler@4.1.87.Final",
+                        "type": "java-archive",
+                        "upstreams": null,
+                        "version": "4.1.87.Final"
+                    },
+                    "matchDetails": [
+                        {
+                            "found": {
+                                "versionConstraint": "\u003c4.1.94.Final (unknown)",
+                                "vulnerabilityID": "GHSA-6mjq-h674-j845"
+                            },
+                            "matcher": "java-matcher",
+                            "searchedBy": {
+                                "language": "java",
+                                "namespace": "github:language:java"
+                            },
+                            "type": "exact-direct-match"
+                        }
+                    ],
+                    "relatedVulnerabilities": [
+                        {
+                            "cvss": null,
+                            "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-34462",
+                            "description": "Netty is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers \u0026 clients. The `SniHandler` can allocate up to 16MB of heap for each channel during the TLS handshake. When the handler or the channel does not have an idle timeout, it can be used to make a TCP server using the `SniHandler` to allocate 16MB of heap. The `SniHandler` class is a handler that waits for the TLS handshake to configure a `SslHandler` according to the indicated server name by the `ClientHello` record. For this matter it allocates a `ByteBuf` using the value defined in the `ClientHello` record. Normally the value of the packet should be smaller than the handshake packet but there are not checks done here and the way the code is written, it is possible to craft a packet that makes the `SslClientHelloHandler`. This vulnerability has been fixed in version 4.1.94.Final.",
+                            "id": "CVE-2023-34462",
+                            "namespace": "nvd:cpe",
+                            "severity": "Medium",
+                            "urls": [
+                                "https://github.com/netty/netty/commit/535da17e45201ae4278c0479e6162bb4127d4c32",
+                                "https://github.com/netty/netty/security/advisories/GHSA-6mjq-h674-j845",
+                                "https://security.netapp.com/advisory/ntap-20230803-0001/"
+                            ]
+                        }
+                    ],
+                    "vulnerability": {
+                        "advisories": null,
+                        "cvss": [
+                            {
+                                "metrics": {
+                                    "baseScore": 6.5,
+                                    "exploitabilityScore": 2.8,
+                                    "impactScore": 3.6
+                                },
+                                "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+                                "vendorMetadata": {
+                                    "base_severity": "Medium",
+                                    "status": "N/A"
+                                },
+                                "version": "3.1"
+                            }
+                        ],
+                        "dataSource": "https://github.com/advisories/GHSA-6mjq-h674-j845",
+                        "description": "netty-handler SniHandler 16MB allocation",
+                        "fix": {
+                            "state": "fixed",
+                            "versions": [
+                                "4.1.94.Final"
+                            ]
+                        },
+                        "id": "GHSA-6mjq-h674-j845",
+                        "namespace": "github:language:java",
+                        "severity": "Medium",
+                        "urls": [
+                            "https://github.com/advisories/GHSA-6mjq-h674-j845"
+                        ]
+                    }
+                },
+                {
+                    "artifact": {
+                        "cpes": [
+                            "cpe:2.3:a:google:guava:31.1-jre:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:guava:guava:31.1-jre:*:*:*:*:*:*:*"
+                        ],
+                        "language": "java",
+                        "licenses": [
+                            "LicenseRef-http---www.apache.org-licenses-LICENSE-2.0.txt"
+                        ],
+                        "locations": null,
+                        "metadata": {
+                            "archiveDigests": [
+                                {
+                                    "algorithm": "SHA1",
+                                    "value": "60458f877d055d0c9114d9e1a2efb737b4bc282c"
+                                }
+                            ],
+                            "manifestName": "",
+                            "pomArtifactID": "",
+                            "pomGroupID": "",
+                            "virtualPath": ""
+                        },
+                        "metadataType": "JavaMetadata",
+                        "name": "guava",
+                        "purl": "pkg:maven/com.google.guava/guava@31.1-jre",
+                        "type": "java-archive",
+                        "upstreams": null,
+                        "version": "31.1-jre"
+                    },
+                    "matchDetails": [
+                        {
+                            "found": {
+                                "versionConstraint": "\u003e=1.0,\u003c32.0.0 (unknown)",
+                                "vulnerabilityID": "GHSA-7g45-4rm6-3mm3"
+                            },
+                            "matcher": "java-matcher",
+                            "searchedBy": {
+                                "language": "java",
+                                "namespace": "github:language:java"
+                            },
+                            "type": "exact-direct-match"
+                        }
+                    ],
+                    "relatedVulnerabilities": [
+                        {
+                            "cvss": null,
+                            "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-2976",
+                            "description": "Use of Java's default temporary directory for file creation in `FileBackedOutputStream` in Google Guava versions 1.0 to 31.1 on Unix systems and Android Ice Cream Sandwich allows other users and apps on the machine with access to the default Java temporary directory to be able to access the files created by the class.\n\nEven though the security vulnerability is fixed in version 32.0.0, we recommend using version 32.0.1 as version 32.0.0 breaks some functionality under Windows.\n\n",
+                            "id": "CVE-2023-2976",
+                            "namespace": "nvd:cpe",
+                            "severity": "High",
+                            "urls": [
+                                "https://github.com/google/guava/issues/2575",
+                                "https://security.netapp.com/advisory/ntap-20230818-0008/"
+                            ]
+                        }
+                    ],
+                    "vulnerability": {
+                        "advisories": null,
+                        "cvss": [
+                            {
+                                "metrics": {
+                                    "baseScore": 5.5,
+                                    "exploitabilityScore": 1.8,
+                                    "impactScore": 3.6
+                                },
+                                "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+                                "vendorMetadata": {
+                                    "base_severity": "Medium",
+                                    "status": "N/A"
+                                },
+                                "version": "3.1"
+                            }
+                        ],
+                        "dataSource": "https://github.com/advisories/GHSA-7g45-4rm6-3mm3",
+                        "description": "Guava vulnerable to insecure use of temporary directory",
+                        "fix": {
+                            "state": "fixed",
+                            "versions": [
+                                "32.0.0"
+                            ]
+                        },
+                        "id": "GHSA-7g45-4rm6-3mm3",
+                        "namespace": "github:language:java",
+                        "severity": "Medium",
+                        "urls": [
+                            "https://github.com/advisories/GHSA-7g45-4rm6-3mm3"
+                        ]
+                    }
+                },
+                {
+                    "artifact": {
+                        "cpes": [
+                            "cpe:2.3:a:netty-codec-http2:netty-codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-codec-http2:netty_codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_codec_http2:netty-codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_codec_http2:netty_codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-project:netty-codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-project:netty_codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_project:netty-codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_project:netty_codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:codec-http2:netty-codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:codec-http2:netty_codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:codec_http2:netty-codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:codec_http2:netty_codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-codec-http2:codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-codec-http2:codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-codec:netty-codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-codec:netty_codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_codec:netty-codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_codec:netty_codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_codec_http2:codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_codec_http2:codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-project:codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-project:codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_project:codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_project:codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:codec-http2:codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:codec-http2:codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:codec:netty-codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:codec:netty_codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:codec_http2:codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:codec_http2:codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-codec:codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty-codec:codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty:netty-codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty:netty_codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_codec:codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty_codec:codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:codec:codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:codec:codec_http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty:codec-http2:4.1.87.Final:*:*:*:*:*:*:*",
+                            "cpe:2.3:a:netty:codec_http2:4.1.87.Final:*:*:*:*:*:*:*"
+                        ],
+                        "language": "java",
+                        "licenses": [
+                            "LicenseRef-https---www.apache.org-licenses-LICENSE-2.0"
+                        ],
+                        "locations": null,
+                        "metadata": {
+                            "archiveDigests": [
+                                {
+                                    "algorithm": "SHA1",
+                                    "value": "72b756ff290d782c9ebb36db7d42ee272270c0b4"
+                                }
+                            ],
+                            "manifestName": "",
+                            "pomArtifactID": "",
+                            "pomGroupID": "",
+                            "virtualPath": ""
+                        },
+                        "metadataType": "JavaMetadata",
+                        "name": "netty-codec-http2",
+                        "purl": "pkg:maven/io.netty/netty-codec-http2@4.1.87.Final",
+                        "type": "java-archive",
+                        "upstreams": null,
+                        "version": "4.1.87.Final"
+                    },
+                    "matchDetails": [
+                        {
+                            "found": {
+                                "versionConstraint": "\u003c4.1.100.Final (unknown)",
+                                "vulnerabilityID": "GHSA-xpw8-rcwv-8f8p"
+                            },
+                            "matcher": "java-matcher",
+                            "searchedBy": {
+                                "language": "java",
+                                "namespace": "github:language:java"
+                            },
+                            "type": "exact-direct-match"
+                        }
+                    ],
+                    "relatedVulnerabilities": null,
+                    "vulnerability": {
+                        "advisories": null,
+                        "cvss": [
+                            {
+                                "metrics": {
+                                    "baseScore": 5.3,
+                                    "exploitabilityScore": 3.9,
+                                    "impactScore": 1.4
+                                },
+                                "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+                                "vendorMetadata": {
+                                    "base_severity": "Medium",
+                                    "status": "N/A"
+                                },
+                                "version": "3.1"
+                            }
+                        ],
+                        "dataSource": "https://github.com/advisories/GHSA-xpw8-rcwv-8f8p",
+                        "description": "io.netty:netty-codec-http2 vulnerable to HTTP/2 Rapid Reset Attack",
+                        "fix": {
+                            "state": "fixed",
+                            "versions": [
+                                "4.1.100.Final"
+                            ]
+                        },
+                        "id": "GHSA-xpw8-rcwv-8f8p",
+                        "namespace": "github:language:java",
+                        "severity": "Medium",
+                        "urls": [
+                            "https://github.com/advisories/GHSA-xpw8-rcwv-8f8p"
+                        ]
+                    }
+                }
+            ],
+            "source": {
+                "target": {
+                    "architecture": "",
+                    "config": null,
+                    "imageID": "",
+                    "imageSize": 0,
+                    "layers": null,
+                    "manifest": null,
+                    "manifestDigest": "",
+                    "mediaType": "",
+                    "os": "",
+                    "repoDigests": [],
+                    "tags": [],
+                    "userInput": ""
+                },
+                "type": "image"
+            }
+        }
+    },
+    "status": {}
+}
